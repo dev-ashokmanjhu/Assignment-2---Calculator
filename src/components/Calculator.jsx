@@ -38,7 +38,7 @@ function Calculator() {
   const handleEqual = () => {
     try {
       const result = eval(input);
-      setInput(result.toString());
+      setInput(result);
     } catch (error) {
       setInput("Error");
     }
