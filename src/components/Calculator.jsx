@@ -7,6 +7,26 @@ import EqualButton from "./EqualButton";
 function Calculator() {
   const [input, setInput] = useState("");
 
+  const val = [
+    "%",
+    "**",
+    "/",
+    "7",
+    "8",
+    "9",
+    "*",
+    "4",
+    "5",
+    "6",
+    "-",
+    "1",
+    "2",
+    "3",
+    "+",
+    ".",
+    "0",
+  ];
+
   const handleInput = (value) => {
     setInput(input.toString() + value);
   };
@@ -29,23 +49,9 @@ function Calculator() {
       <Display input={input} />
       <div className="grid grid-cols-4 gap-2 p-2">
         <ClearButton handleClear={handleClear} />
-        <Button value="%" handleInput={handleInput} />
-        <Button value="**" handleInput={handleInput} />
-        <Button value="/" handleInput={handleInput} />
-        <Button value={7} handleInput={handleInput} />
-        <Button value={8} handleInput={handleInput} />
-        <Button value={9} handleInput={handleInput} />
-        <Button value="*" handleInput={handleInput} />
-        <Button value={4} handleInput={handleInput} />
-        <Button value={5} handleInput={handleInput} />
-        <Button value={6} handleInput={handleInput} />
-        <Button value="-" handleInput={handleInput} />
-        <Button value={1} handleInput={handleInput} />
-        <Button value={2} handleInput={handleInput} />
-        <Button value={3} handleInput={handleInput} />
-        <Button value="+" handleInput={handleInput} />
-        <Button value="." handleInput={handleInput} />
-        <Button value={0} handleInput={handleInput} />
+        {val.map((item) => (
+          <Button key={item} value={item} handleInput={handleInput} />
+        ))}
         <EqualButton handleCalculation={handleEqual} />
       </div>
     </div>
