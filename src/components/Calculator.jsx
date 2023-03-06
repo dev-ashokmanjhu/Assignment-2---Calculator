@@ -29,22 +29,24 @@ function Calculator() {
       <Display input={input} />
       <div className="grid grid-cols-4 gap-2 p-2">
         <ClearButton handleClear={handleClear} />
+        <Button value="%" handleInput={handleInput} />
+        <Button value="**" handleInput={handleInput} />
+        <Button value="/" handleInput={handleInput} />
         <Button value={7} handleInput={handleInput} />
         <Button value={8} handleInput={handleInput} />
         <Button value={9} handleInput={handleInput} />
-        <Button value="/" handleInput={handleInput} />
+        <Button value="*" handleInput={handleInput} />
         <Button value={4} handleInput={handleInput} />
         <Button value={5} handleInput={handleInput} />
         <Button value={6} handleInput={handleInput} />
-        <Button value="*" handleInput={handleInput} />
+        <Button value="-" handleInput={handleInput} />
         <Button value={1} handleInput={handleInput} />
         <Button value={2} handleInput={handleInput} />
         <Button value={3} handleInput={handleInput} />
-        <Button value="-" handleInput={handleInput} />
-        <Button value={0} handleInput={handleInput} />
-        <Button value="." handleInput={handleInput} />
-        <EqualButton handleCalculation={handleEqual} />
         <Button value="+" handleInput={handleInput} />
+        <Button value="." handleInput={handleInput} />
+        <Button value={0} handleInput={handleInput} />
+        <EqualButton handleCalculation={handleEqual} />
       </div>
     </div>
   );
