@@ -3,6 +3,7 @@ import Display from "./Display";
 import Button from "./Button";
 import ClearButton from "./ClearButton";
 import EqualButton from "./EqualButton";
+import DeleteButton from "./DeleteButton";
 
 function Calculator() {
   const [input, setInput] = useState("");
@@ -43,6 +44,9 @@ function Calculator() {
       setInput("Error");
     }
   };
+  function handleDelete() {
+    setInput(input.slice(0, input.length - 1));
+  }
 
   return (
     <div className="w-96 mx-auto  rounded-md bg-white shadow-md">
@@ -53,6 +57,7 @@ function Calculator() {
         {val.map((item) => (
           <Button key={item} value={item} handleInput={handleInput} />
         ))}
+        <DeleteButton handleDelete={handleDelete} />
         <EqualButton handleCalculation={handleEqual} />
       </div>
     </div>
