@@ -45,7 +45,8 @@ function Calculator() {
   };
 
   return (
-    <div className="w-80 mx-auto my-10 rounded-md bg-white shadow-md">
+    <div className="w-96 mx-auto  rounded-md bg-white shadow-md">
+      <h1 className="font-medium text-center m-1 text-lg">Assignment 2</h1>
       <Display input={input} />
       <div className="grid grid-cols-4 gap-2 p-2">
         <ClearButton handleClear={handleClear} />
