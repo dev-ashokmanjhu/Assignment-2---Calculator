@@ -5,6 +5,7 @@ function Display({ input }) {
       type="text"
       value={input}
       readOnly
+      placeholder="0"
     />
   );
 }

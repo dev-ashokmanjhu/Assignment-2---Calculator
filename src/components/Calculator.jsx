@@ -5,18 +5,23 @@ import ClearButton from "./ClearButton";
 import EqualButton from "./EqualButton";
 
 function Calculator() {
-  const [input, setInput] = useState(0);
+  const [input, setInput] = useState("");
 
   const handleInput = (value) => {
-    setInput(input + value);
+    setInput(input.toString() + value);
   };
 
   const handleClear = () => {
-    setInput(0);
+    setInput("");
   };
 
   const handleEqual = () => {
-    setInput(eval(input).toString());
+    try {
+      const result = eval(input);
+      setInput(result.toString());
+    } catch (error) {
+      setInput("Error");
+    }
   };
 
   return (
