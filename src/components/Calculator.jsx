@@ -45,9 +45,8 @@ function Calculator() {
     }
   };
   function handleDelete() {
-    setInput(input.slice(0, input.length - 1));
+    setInput(input.toString().slice(0, input.length - 1));
   }
-
   return (
     <div className="w-96 mx-auto  rounded-md bg-white shadow-md">
       <h1 className="font-medium text-center m-1 text-lg">Assignment 2</h1>
